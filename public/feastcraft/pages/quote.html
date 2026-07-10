@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Custom Catering Quote | FeastCraft</title>
+<meta name="description" content="Tell us about your event and get a curated catering proposal within 24 hours.">
+<link rel="canonical" href="/pages/quote.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css"><link rel="stylesheet" href="../assets/css/components.css"><link rel="stylesheet" href="../assets/css/dark-mode.css"><link rel="stylesheet" href="../assets/css/rtl.css"><link rel="stylesheet" href="../assets/css/responsive.css">
+</head><body>
+<header class="fc-nav"><div class="container-fc fc-nav-inner"><a href="index.html" class="fc-brand"><span class="logo-mark"><i class="ri-restaurant-2-fill"></i></span> Feast<span>Craft</span></a>
+<nav><ul class="fc-menu"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="menus.html">Menus</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="packages.html">Packages</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+<div class="fc-nav-actions"><button class="fc-icon-btn" data-toggle-theme><i class="ri-moon-line"></i></button><button class="fc-icon-btn" data-toggle-rtl><i class="ri-translate-2"></i></button><button class="fc-icon-btn fc-menu-toggle"><i class="ri-menu-3-line"></i></button></div></div></header>
+
+<section class="page-hero"><div class="container-fc"><div class="breadcrumbs"><a href="index.html">Home</a> / Quote</div><h1>Request your custom catering quote.</h1><p style="max-width:640px;color:var(--fc-muted);">Share the essentials — we'll return a bespoke proposal within one business day.</p></div></section>
+
+<section class="section"><div class="container-fc"><div class="row g-5">
+<div class="col-lg-8" data-aos>
+<form class="fc-form" data-validate style="background:#fff;padding:40px;border-radius:var(--fc-radius-lg);box-shadow:var(--fc-shadow-sm);">
+<div class="row-2">
+<div class="field"><label for="qn">Full name *</label><input id="qn" class="fc-input" required><div class="invalid-msg">Name is required</div></div>
+<div class="field"><label for="qp">Phone *</label><input id="qp" type="tel" class="fc-input" required><div class="invalid-msg">Valid phone required</div></div>
+</div>
+<div class="row-2 mt-3">
+<div class="field"><label for="qe">Email *</label><input id="qe" type="email" class="fc-input" required><div class="invalid-msg">Valid email required</div></div>
+<div class="field"><label for="qet">Event type *</label><select id="qet" class="fc-select" required><option value="">Select…</option><option>Wedding</option><option>Corporate</option><option>Birthday</option><option>Anniversary</option><option>Baby Shower</option><option>Private Dinner</option><option>Festival</option><option>Other</option></select><div class="invalid-msg">Please choose</div></div>
+</div>
+<div class="row-3 mt-3">
+<div class="field"><label for="qd">Event date *</label><input id="qd" type="date" class="fc-input" required><div class="invalid-msg">Date required</div></div>
+<div class="field"><label for="qv">Venue</label><input id="qv" class="fc-input" placeholder="e.g. Estate, hotel…"></div>
+<div class="field"><label for="qc">City *</label><input id="qc" class="fc-input" required><div class="invalid-msg">City required</div></div>
+</div>
+<div class="row-3 mt-3">
+<div class="field"><label for="qg">Guest count *</label><input id="qg" type="number" class="fc-input" min="10" required><div class="invalid-msg">Guest count required</div></div>
+<div class="field"><label for="qcu">Cuisine preference</label><select id="qcu" class="fc-select"><option>No preference</option><option>French / Mediterranean</option><option>Contemporary American</option><option>Pan-Asian</option><option>Indian / South Asian</option><option>Regional / Local</option></select></div>
+<div class="field"><label for="qvn">Diet</label><select id="qvn" class="fc-select"><option>Mixed (veg + non-veg)</option><option>Vegetarian only</option><option>Vegan only</option><option>Halal</option><option>Kosher</option></select></div>
+</div>
+<div class="row-2 mt-3">
+<div class="field"><label for="qb">Budget range</label><select id="qb" class="fc-select"><option>Under $5,000</option><option>$5,000 – $15,000</option><option>$15,000 – $40,000</option><option>$40,000 – $100,000</option><option>$100,000+</option></select></div>
+<div class="field"><label>Extras</label>
+<div style="display:flex;gap:16px;padding-top:10px;flex-wrap:wrap;">
+<label style="font-weight:400;"><input type="checkbox"> Live counters</label>
+<label style="font-weight:400;"><input type="checkbox"> Décor & floral</label>
+<label style="font-weight:400;"><input type="checkbox"> Full bar</label>
+</div></div>
+</div>
+<div class="field mt-3"><label for="qm">Special requirements</label><textarea id="qm" class="fc-textarea" placeholder="Allergies, style, theme, timeline…"></textarea></div>
+<button type="submit" class="btn-fc btn-fc-primary mt-4">Send request <i class="ri-send-plane-line"></i></button>
+<div data-success style="display:none;padding:40px;text-align:center;">
+<div style="width:72px;height:72px;border-radius:50%;background:var(--fc-primary-050);color:var(--fc-primary);display:inline-flex;align-items:center;justify-content:center;font-size:2rem;"><i class="ri-check-line"></i></div>
+<h3 class="mt-3">Thank you — request received.</h3>
+<p>Our event manager will reach out within one business hour with a curated proposal.</p>
+</div>
+</form>
+</div>
+<div class="col-lg-4" data-aos data-aos-delay="120">
+<div class="fc-contact-info"><div class="ic"><i class="ri-phone-line"></i></div><div><h5>Speak to an event manager</h5><p>+1 (212) 555-0198 · Mon–Sun, 9AM–9PM</p></div></div>
+<div class="fc-contact-info mt-3"><div class="ic"><i class="ri-whatsapp-line"></i></div><div><h5>WhatsApp</h5><p>Quick photos & pricing questions.</p></div></div>
+<div class="fc-contact-info mt-3"><div class="ic"><i class="ri-time-line"></i></div><div><h5>Response time</h5><p>&lt;1 business hour for quote requests.</p></div></div>
+</div>
+</div></div></section>
+
+<footer class="fc-footer"><div class="container-fc grid">
+<div><a href="index.html" class="fc-brand" style="color:#fff;"><span class="logo-mark"><i class="ri-restaurant-2-fill"></i></span> Feast<span style="color:var(--fc-accent);">Craft</span></a></div>
+<div><h5>Explore</h5><ul><li><a href="menus.html">Menus</a></li></ul></div>
+<div><h5>Company</h5><ul><li><a href="packages.html">Packages</a></li></ul></div>
+<div><h5>Contact</h5><p style="opacity:.8;">+1 (212) 555-0198</p></div>
+</div><div class="fc-footer-bottom">© <span data-year></span> FeastCraft.</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/theme.js"></script><script src="../assets/js/main.js"></script><script src="../assets/js/animations.js"></script><script src="../assets/js/forms.js"></script>
+</body></html>
