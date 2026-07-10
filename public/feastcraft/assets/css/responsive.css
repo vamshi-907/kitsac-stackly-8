@@ -1,0 +1,22 @@
+/* Responsive fine-tuning */
+@media (max-width: 1200px) {
+  .fc-hero-visual .badge-float { left: 12px; bottom: 24px; }
+  .fc-hero-visual .card-float { right: 12px; top: 24px; }
+}
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .section-sm { padding: 40px 0; }
+  .fc-hero { padding: 24px 0 48px; }
+  .fc-hero-meta { gap: 20px; }
+  .fc-hero-meta div strong { font-size: 1.6rem; }
+  .fc-cta-band { padding: 40px 24px; }
+  .fc-stat { padding: 24px; }
+  .fc-stat strong { font-size: 2.2rem; }
+  .fc-pack { padding: 32px 24px; }
+  .page-hero { padding: 56px 0 48px; }
+}
+@media (max-width: 480px) {
+  .fc-topbar { display: none; }
+  .fc-hero h1 { font-size: 2.2rem; }
+  .fc-form .row-2, .fc-form .row-3 { grid-template-columns: 1fr; }
+}

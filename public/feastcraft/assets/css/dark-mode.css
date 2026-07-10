@@ -1,0 +1,39 @@
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --fc-bg: #221B1A;           /* Espresso Black */
+  --fc-surface: #2b2321;
+  --fc-text: #F4EFE8;
+  --fc-muted: #b0a49d;
+  --fc-primary-050: rgba(138,59,93,.18);
+  --bs-body-color: #F4EFE8;
+  --bs-body-bg: #221B1A;
+}
+[data-theme="dark"] body { background: var(--fc-bg); color: var(--fc-text); }
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4 { color: var(--fc-text); }
+[data-theme="dark"] .fc-nav { background: rgba(34,27,26,.85); border-bottom-color: rgba(255,255,255,.06); }
+[data-theme="dark"] .fc-nav.scrolled { background: rgba(34,27,26,.96); }
+[data-theme="dark"] .fc-card,
+[data-theme="dark"] .fc-feature,
+[data-theme="dark"] .fc-stat,
+[data-theme="dark"] .fc-quote,
+[data-theme="dark"] .fc-blog,
+[data-theme="dark"] .fc-contact-info,
+[data-theme="dark"] .fc-accordion .item,
+[data-theme="dark"] .fc-table,
+[data-theme="dark"] .fc-countdown .unit {
+  background: #2b2321; border-color: rgba(255,255,255,.06);
+}
+[data-theme="dark"] .fc-table th { background: #362a27; color: var(--fc-highlight); }
+[data-theme="dark"] .fc-form .fc-input,
+[data-theme="dark"] .fc-form .fc-select,
+[data-theme="dark"] .fc-form .fc-textarea { background: #2b2321; border-color: rgba(255,255,255,.1); color: var(--fc-text); }
+[data-theme="dark"] .bg-surface { background: #2b2321; }
+[data-theme="dark"] .bg-cream { background: #362a27; }
+[data-theme="dark"] .page-hero { background: linear-gradient(160deg, #2b2321 0%, #221B1A 100%); }
+[data-theme="dark"] .btn-fc-outline { color: var(--fc-text); border-color: rgba(255,255,255,.15); }
+[data-theme="dark"] .fc-icon-btn { color: var(--fc-text); border-color: rgba(255,255,255,.15); }
+[data-theme="dark"] .fc-menu a { color: var(--fc-text); }
+[data-theme="dark"] .fc-brand { color: var(--fc-text); }
+[data-theme="dark"] .fc-hero { background: var(--fc-bg); }
+[data-theme="dark"] .fc-pack { background: #2b2321; border-color: rgba(255,255,255,.06); }
+[data-theme="dark"] .fc-chef .info { background: rgba(43,35,33,.95); }

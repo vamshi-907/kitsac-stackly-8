@@ -1,0 +1,49 @@
+/* Additional reusable components */
+.fc-tabs { display:flex; gap: 8px; flex-wrap:wrap; margin-bottom: 32px; }
+.fc-tab {
+  padding: 10px 20px; border-radius: 999px; background: var(--fc-surface);
+  border: 1px solid transparent; cursor: pointer; font-weight: 500; font-size:.9rem;
+  color: var(--fc-text); transition: all .2s ease;
+}
+.fc-tab:hover { border-color: var(--fc-primary); color: var(--fc-primary); }
+.fc-tab.active { background: var(--fc-primary); color: #fff; border-color: var(--fc-primary); }
+
+.fc-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 4px 10px; border-radius: 999px; background: var(--fc-primary-050);
+  color: var(--fc-primary); font-size:.75rem; font-weight:600;
+  text-transform: uppercase; letter-spacing:.12em;
+}
+
+.fc-pagination { display:flex; gap:8px; justify-content:center; margin-top: 40px; }
+.fc-pagination a {
+  width: 42px; height: 42px; border-radius: 12px; display:inline-flex;
+  align-items:center; justify-content:center; background:#fff;
+  border: 1px solid rgba(62,51,46,.1); color: var(--fc-text);
+  transition: all .2s ease; font-weight: 500;
+}
+.fc-pagination a:hover, .fc-pagination a.active {
+  background: var(--fc-primary); color: #fff; border-color: var(--fc-primary);
+}
+
+.fc-tooltip { position: relative; }
+.fc-tooltip::after {
+  content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%) translateY(6px); padding: 6px 10px; border-radius: 8px;
+  background: var(--fc-text); color: #fff; font-size:.8rem; white-space: nowrap;
+  opacity:0; pointer-events:none; transition: all .2s ease;
+}
+.fc-tooltip:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Modal */
+.fc-modal-overlay {
+  position: fixed; inset:0; background: rgba(34,27,26,.6); z-index:2500;
+  display:none; align-items:center; justify-content:center; padding: 24px;
+}
+.fc-modal-overlay.open { display: flex; }
+.fc-modal {
+  background:#fff; border-radius: var(--fc-radius-lg); max-width: 520px; width: 100%;
+  padding: 32px; box-shadow: var(--fc-shadow-lg); position: relative;
+}
+[data-theme="dark"] .fc-modal { background: #2b2321; }
+.fc-modal .close-btn { position:absolute; top: 14px; right: 14px; background:none; border:none; font-size:1.4rem; cursor:pointer; color: var(--fc-muted); }

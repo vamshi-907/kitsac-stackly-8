@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/feastcraft/pages/index.html</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>/feastcraft/pages/about.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/feastcraft/pages/menus.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>/feastcraft/pages/menu-details.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>/feastcraft/pages/events.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/feastcraft/pages/gallery.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>/feastcraft/pages/packages.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/feastcraft/pages/quote.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>/feastcraft/pages/pricing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>/feastcraft/pages/blog.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>/feastcraft/pages/blog-details.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>/feastcraft/pages/team.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>/feastcraft/pages/faq.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>/feastcraft/pages/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>

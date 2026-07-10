@@ -1,0 +1,13 @@
+/* RTL overrides */
+[dir="rtl"] body { text-align: right; }
+[dir="rtl"] .eyebrow::before { margin-left: 10px; margin-right: 0; }
+[dir="rtl"] .fc-timeline { padding-left: 0; padding-right: 40px; }
+[dir="rtl"] .fc-timeline::before { left: auto; right: 12px; }
+[dir="rtl"] .fc-timeline .item::before { left: auto; right: -34px; }
+[dir="rtl"] .fc-hero-visual .badge-float { left: auto; right: -24px; }
+[dir="rtl"] .fc-hero-visual .card-float { right: auto; left: -16px; }
+[dir="rtl"] .fc-hero-visual .card-float .avatars span { margin-left: 0; margin-right: -8px; }
+[dir="rtl"] .fc-hero-visual .card-float .avatars span:first-child { margin-right: 0; }
+[dir="rtl"] .fc-cta-band .actions { justify-content: flex-start; }
+[dir="rtl"] .fc-toast { right: auto; left: 24px; }
+[dir="rtl"] .fc-pack ul li i { transform: scaleX(-1); }
