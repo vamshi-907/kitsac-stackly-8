@@ -170,14 +170,24 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 992px) {
   .fc-menu-toggle { display: inline-flex; }
+  .fc-nav nav { position: static; }
   .fc-menu {
-    position: fixed; inset: 78px 0 0 0; background: var(--fc-bg);
-    flex-direction: column; align-items: stretch; padding: 32px;
-    transform: translateY(-120%); transition: transform .35s ease;
+    position: fixed; left: 0; right: 0; top: 78px; bottom: 0;
+    background: var(--fc-bg);
+    flex-direction: column; align-items: stretch; padding: 24px 28px;
+    gap: 4px;
+    transform: translateY(-100%);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: transform .35s ease, opacity .25s ease, visibility 0s linear .35s;
     box-shadow: var(--fc-shadow); overflow-y: auto;
+    z-index: 60;
   }
-  .fc-menu.open { transform: translateY(0); }
-  .fc-menu a { padding: 14px 8px; border-bottom: 1px solid rgba(62,51,46,.08); border-radius: 0; }
+  .fc-menu.open {
+    transform: translateY(0);
+    opacity: 1; visibility: visible; pointer-events: auto;
+    transition: transform .35s ease, opacity .25s ease, visibility 0s linear 0s;
+  }
+  .fc-menu a { padding: 14px 8px; border-bottom: 1px solid rgba(62,51,46,.08); border-radius: 0; font-size: 1.05rem; }
   .fc-nav-actions .btn-fc { display:none; }
 }
 
