@@ -109,24 +109,42 @@ img { max-width: 100%; height: auto; display: block; }
 .rounded-fc-lg { border-radius: var(--fc-radius-lg); }
 
 /* ------- Buttons ------- */
+/* ------- Buttons (Unified System) -------
+   Two variants only: Primary + Secondary.
+   btn-fc-outline & btn-fc-ghost are shape variants that still use the two brand colors.
+   btn-fc-accent is kept as an alias to Secondary so legacy pages stay consistent. */
 .btn-fc {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 26px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 14px 28px; border-radius: 999px;
   font-family: var(--fc-font-body); font-weight: 600; font-size: .95rem;
-  border: 1px solid transparent; cursor: pointer;
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  border: 1.5px solid transparent; cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
   text-decoration: none; line-height: 1; white-space: nowrap;
 }
 .btn-fc i { font-size: 1.1em; }
 .btn-fc:hover { transform: translateY(-2px); }
+.btn-fc:focus-visible { outline: 3px solid var(--fc-primary); outline-offset: 3px; }
+
 .btn-fc-primary { background: var(--fc-primary); color: #fff; box-shadow: 0 10px 24px rgba(138,59,93,.28); }
 .btn-fc-primary:hover { background: var(--fc-primary-600); color:#fff; box-shadow: 0 14px 34px rgba(138,59,93,.38); }
-.btn-fc-outline  { background: transparent; color: var(--fc-text); border-color: rgba(62,51,46,.2); }
-.btn-fc-outline:hover { border-color: var(--fc-primary); color: var(--fc-primary); }
-.btn-fc-ghost { background: rgba(255,255,255,.14); color:#fff; backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.28); }
-.btn-fc-ghost:hover { background: rgba(255,255,255,.24); color:#fff; }
-.btn-fc-accent { background: var(--fc-accent); color: var(--fc-text); }
-.btn-fc-accent:hover { background: #efa276; color: var(--fc-text); }
+
+.btn-fc-secondary, .btn-fc-accent {
+  background: var(--fc-secondary); color: #fff;
+  box-shadow: 0 10px 24px rgba(110,139,103,.26);
+}
+.btn-fc-secondary:hover, .btn-fc-accent:hover {
+  background: var(--fc-secondary-600); color: #fff;
+  box-shadow: 0 14px 34px rgba(110,139,103,.36);
+}
+
+.btn-fc-outline { background: transparent; color: var(--fc-primary); border-color: var(--fc-primary); }
+.btn-fc-outline:hover { background: var(--fc-primary); color: #fff; }
+
+.btn-fc-ghost {
+  background: rgba(255,255,255,.14); color: #fff;
+  backdrop-filter: blur(10px); border: 1.5px solid rgba(255,255,255,.35);
+}
+.btn-fc-ghost:hover { background: rgba(255,255,255,.24); color: #fff; }
 
 /* ------- Top bar ------- */
 .fc-topbar {
