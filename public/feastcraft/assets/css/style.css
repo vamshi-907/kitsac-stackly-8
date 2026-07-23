@@ -641,3 +641,152 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .fc-contact-info h5 { margin: 0 0 4px; font-family: var(--fc-font-body); font-size: 1rem; font-weight:600; }
 .fc-contact-info p { margin:0; color: var(--fc-muted); font-size:.9rem; }
+
+/* ========================================================================
+   ADVANCED LAYOUT SYSTEM — Hexagon Cards, Nav Dropdown, Spacing Fixes
+   ======================================================================== */
+
+/* Tighter spacing above footer — removes the "empty gap" QA flag */
+main > section:last-of-type { padding-bottom: var(--fc-space-6); }
+main > section.section:last-of-type + .fc-footer,
+main + .fc-footer { margin-top: 0; }
+.fc-footer { padding-top: var(--fc-space-6); }
+
+/* Home dropdown (Home 1 / Home 2) in top navbar */
+.fc-menu .has-dropdown { position: relative; }
+.fc-menu .has-dropdown > a::after {
+  content: "\ea4e"; font-family: "remixicon"; font-size: .95em;
+  margin-left: 4px; color: var(--fc-primary); vertical-align: middle;
+}
+.fc-menu .fc-dropdown {
+  position: absolute; top: calc(100% + 8px); left: 0; min-width: 200px;
+  background: #fff; border: 1px solid rgba(62,51,46,.08); border-radius: 14px;
+  box-shadow: var(--fc-shadow); padding: 8px; margin: 0; list-style: none;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+  z-index: 1050;
+}
+.fc-menu .has-dropdown:hover > .fc-dropdown,
+.fc-menu .has-dropdown:focus-within > .fc-dropdown,
+.fc-menu .has-dropdown.open > .fc-dropdown {
+  opacity: 1; visibility: visible; transform: translateY(0);
+  transition-delay: 0s;
+}
+.fc-menu .fc-dropdown li { margin: 0; }
+.fc-menu .fc-dropdown a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 10px; font-size: .9rem;
+  color: var(--fc-text); background: transparent;
+}
+.fc-menu .fc-dropdown a:hover, .fc-menu .fc-dropdown a.active {
+  background: var(--fc-primary-050); color: var(--fc-primary);
+}
+.fc-menu .fc-dropdown a i { color: var(--fc-primary); }
+@media (max-width: 992px) {
+  .fc-menu .fc-dropdown {
+    position: static; opacity: 1; visibility: visible; transform: none;
+    box-shadow: none; border: none; background: transparent;
+    padding: 6px 0 0 10px; min-width: 0;
+  }
+  .fc-menu .fc-dropdown a { padding: 10px 12px; }
+  .fc-menu .has-dropdown > a::after { display: none; }
+}
+
+/* Hexagon system — signature layout replacing generic square/circle containers */
+.fc-hex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px 20px;
+  padding: 0;
+  list-style: none;
+}
+.fc-hex {
+  position: relative;
+  aspect-ratio: 1 / 1.1547;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  overflow: hidden;
+  background: #fff;
+  transition: transform .35s ease, filter .35s ease;
+}
+.fc-hex:hover { transform: translateY(-6px) scale(1.02); }
+.fc-hex img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .7s ease;
+}
+.fc-hex:hover img { transform: scale(1.08); }
+.fc-hex .fc-hex-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(42,35,33,0) 40%, rgba(42,35,33,.85) 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 18% 12%;
+  color: #fff; text-align: center;
+}
+.fc-hex .fc-hex-overlay .tag {
+  font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--fc-secondary-050); margin-bottom: 6px;
+}
+.fc-hex .fc-hex-overlay h4 {
+  color: #fff; font-size: 1.15rem; margin: 0 0 4px;
+}
+.fc-hex .fc-hex-overlay p {
+  color: rgba(255,255,255,.85); font-size: .8rem; margin: 0;
+}
+
+/* Solid-color hexagon (for icon containers replacing generic square icons) */
+.fc-hex-icon {
+  width: 84px; height: 96px;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: var(--fc-primary);
+  color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.9rem;
+  transition: transform .3s ease, background .3s ease;
+}
+.fc-hex-icon.secondary { background: var(--fc-secondary); }
+.fc-hex-icon.outline {
+  background: transparent; color: var(--fc-primary);
+  position: relative;
+}
+.fc-hex-icon.outline::before {
+  content: ""; position: absolute; inset: 0;
+  background: var(--fc-primary-050);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  z-index: -1;
+}
+.fc-feature:hover .fc-hex-icon { transform: scale(1.08) rotate(-4deg); }
+
+/* Hex frame for portrait / cover images */
+.fc-hex-frame {
+  aspect-ratio: 1 / 1.1547;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  overflow: hidden;
+  background: var(--fc-primary-050);
+}
+.fc-hex-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Vertically staggered honeycomb (offset alternating columns) */
+.fc-honeycomb {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.fc-honeycomb > *:nth-child(even) { transform: translateY(40px); }
+@media (max-width: 992px) {
+  .fc-honeycomb { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .fc-honeycomb { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .fc-honeycomb > *:nth-child(even) { transform: translateY(28px); }
+}
+
+/* Section-head left variant + consistent alignment helper */
+.section-head.left { margin-left: 0; margin-right: 0; text-align: left; max-width: 640px; }
+.section .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: var(--fc-space-3); }
+.section-head.left ~ .btn-row,
+.section-head.left + * .btn-row { justify-content: flex-start; }
+.section-head:not(.left) ~ .btn-row,
+.section-head ~ .text-center .btn-row { justify-content: center; }
