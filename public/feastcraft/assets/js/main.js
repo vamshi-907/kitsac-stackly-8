@@ -10,6 +10,31 @@
     onScroll();
   }
 
+  // ==== Inject Home dropdown (Home 1 / Home 2) into every navbar ====
+  const menuEl = document.querySelector('.fc-menu');
+  if (menuEl && !menuEl.querySelector('.has-dropdown')) {
+    const firstItem = menuEl.querySelector('li');
+    if (firstItem) {
+      const path = (location.pathname.split('/').pop() || '').toLowerCase();
+      const isH1 = path === 'index.html' || path === '' || path === 'home1.html';
+      const isH2 = path === 'home2.html';
+      firstItem.classList.add('has-dropdown');
+      const anchor = firstItem.querySelector('a');
+      if (anchor) { anchor.setAttribute('aria-haspopup', 'true'); anchor.textContent = 'Home'; anchor.href = 'index.html'; }
+      const dd = document.createElement('ul');
+      dd.className = 'fc-dropdown';
+      dd.innerHTML = `
+        <li><a href="index.html" class="${isH1 ? 'active' : ''}"><i class="ri-home-4-line"></i> Home 1 · Classic</a></li>
+        <li><a href="home2.html" class="${isH2 ? 'active' : ''}"><i class="ri-vip-crown-line"></i> Home 2 · Premium</a></li>
+      `;
+      firstItem.appendChild(dd);
+      // Mobile: tap to toggle
+      firstItem.querySelector('a').addEventListener('click', e => {
+        if (window.innerWidth <= 992) { e.preventDefault(); firstItem.classList.toggle('open'); }
+      });
+    }
+  }
+
   // ==== Mobile menu toggle ====
   const toggle = document.querySelector('.fc-menu-toggle');
   const menu = document.querySelector('.fc-menu');
@@ -20,7 +45,8 @@
       const icon = toggle.querySelector('i');
       if (icon) icon.className = isOpen ? 'ri-close-line' : 'ri-menu-3-line';
     });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => {
+      if (a.closest('.has-dropdown > a') && window.innerWidth <= 992) return; // dropdown toggle handled above
       menu.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
       const icon = toggle.querySelector('i'); if (icon) icon.className = 'ri-menu-3-line';
