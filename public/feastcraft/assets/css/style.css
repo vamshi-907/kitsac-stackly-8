@@ -5,20 +5,26 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Brand Palette */
+  /* Two-color Brand System — Primary + Secondary only */
   --fc-primary: #8A3B5D;        /* Mulberry Wine */
-  --fc-primary-600: #75304e;
+  --fc-primary-600: #6f2f4b;
   --fc-primary-050: #f7ecf0;
-  --fc-secondary: #8FA88A;      /* Dusty Sage */
-  --fc-accent: #F6B48F;         /* Peach Nectar */
-  --fc-highlight: #F9E9C8;      /* Vanilla Cream */
-  --fc-bg: #FFFDF8;             /* Ivory Silk */
-  --fc-surface: #F4EFE8;        /* Linen Beige */
-  --fc-text: #3E332E;           /* Dark Mocha */
+  --fc-secondary: #6E8B67;      /* Dusty Sage */
+  --fc-secondary-600: #566f52;
+  --fc-secondary-050: #eef2ec;
+
+  /* Legacy aliases — all remapped onto Primary/Secondary for consistency */
+  --fc-accent: var(--fc-secondary);
+  --fc-highlight: var(--fc-secondary-050);
+  --fc-success: var(--fc-secondary);
+  --fc-warning: var(--fc-primary);
+  --fc-danger:  var(--fc-primary);
+
+  /* Neutrals */
+  --fc-bg: #FFFDF8;
+  --fc-surface: #F4EFE8;
+  --fc-text: #2A2321;
   --fc-muted: #7a6b64;
-  --fc-success: #728C69;
-  --fc-warning: #D79A2B;
-  --fc-danger:  #B24747;
 
   /* Typography */
   --fc-font-heading: "Cormorant Garamond", Georgia, serif;
